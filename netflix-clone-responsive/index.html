@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix | Landing Page UI Design</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+    <!-- Path: style.css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <!--Bootstrap CDN-->
+  </head>
+  <body>
+    <header>
+      <!--/begin-of-header-->
+      <a href="#" class="logo"><img src="img/logo.png" alt="netflix" /></a>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Latest</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+      <!--/nav-->
+      <div class="search">
+        <input type="text" placeholder="Search" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <!--/search-->
+    </header>
+    <div class="banner">
+      <img src="img/bg.jpg" class="bg" alt="foryou" />
+      <div class="content">
+        <img src="img/name.png" class="movieTitle" alt="title" />
+        <h4>
+          <span>2020</span>
+          <span><i>12+</i></span>
+          <span>1h 55min</span>
+          <span>Action/Fantasy</span>
+        </h4>
+        <p>
+          In Mulan, Hua Mulan (Liu Yifei) is the spirited and determined eldest
+          daughter of an honorable warrior. When the Emperor of China issues a
+          decree that one man from each family must serve in the imperial army,
+          Mulan decides to take the place of her father, who is sick. Assuming
+          the identity of Hua Jun, she disguises herself as a man to fight the
+          invaders that are attacking her nation, proving herself to be a great
+          warrior.
+        </p>
+        <div class="buttons">
+          <a href="#"><i class="fa fa-play" aria-hidden="true"></i> Play</a>
+          <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> My List</a>
+        </div>
+        <!--/buttons-->
+      </div>
+      <!--/content-->
+      <a class="play" onClick="toggleVideo();"
+        ><img src="img/play.png" alt="play" />Watch Trailer</a
+      >
+      <div class="trailer">
+        <video src="img/trailer.mp4" controls="true" autoplay="true"></video
+        ><!--/video-->
+        <img
+          src="img/close.png"
+          class="close"
+          alt="close-here"
+          onClick="toggleVideo()"
+        />
+      </div>
+      <!--/trailer-->
+    </div>
+    <!--/banner-->
+
+    <!--js to make trailer playable-->
+    <script>
+      function toggleVideo() {
+        const trailer = document.querySelector(".trailer");
+        const video = document.querySelector("video");
+        trailer.classList.toggle("active");
+        video.currentTime = 0;
+        video.pause();
+      }
+    </script>
+    <!--/js to make trailer playable-->
+  </body>
+</html>
